@@ -114,15 +114,15 @@ def create_nuscenes_infos_map(root_path, dest_path=None, version='v1.0-trainval'
         dest_path = root_path
 
     if is_test:
-        info_path = os.path.join(dest_path, 'nuscenes_map_infos_test.pkl')
+        info_path = os.path.join(dest_path, 'wang_vectermapnet_infos_test.pkl')
         print(f'saving test set to {info_path}')
         mmcv.dump(test_samples, info_path)
     else:
-        info_path = os.path.join(dest_path, 'nuscenes_map_infos_train.pkl')
+        info_path = os.path.join(dest_path, 'wang_vectermapnet_infos_train.pkl')
         print(f'saving training set to {info_path}')
         mmcv.dump(train_samples, info_path)
 
-        info_path = os.path.join(dest_path, 'nusenes_map_infos_val.pkl')
+        info_path = os.path.join(dest_path, 'wang_vectermapnet_infos_val.pkl')
         print(f'saving validation set to {info_path}')
         mmcv.dump(val_samples, info_path)
 
