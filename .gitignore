@@ -1,3 +1,5 @@
 mmdetection3d/
 .vscode/
-work_dirs/
+work_dirs
+/datasets
+__pycache__/
