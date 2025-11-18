@@ -65,7 +65,7 @@ def create_nuscenes_infos_map(root_path, dest_path=None, version='v1.0-trainval'
             'cams': {},
             'lidar2ego_translation': calibrated_sensor['translation'],
             'lidar2ego_rotation': calibrated_sensor['rotation'],
-            'e2g_traslation': ego_pose['translation'],
+            'e2g_translation': ego_pose['translation'],
             'e2g_rotation': ego_pose['rotation'],
             'timestamp': sample['timestamp'],
             'location': location,
