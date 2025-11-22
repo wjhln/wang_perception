@@ -9,6 +9,8 @@ import os
 import time
 from mmdet.apis import set_random_seed
 from mmcv import mkdir_or_exist
+from torch.distributed.elastic.multiprocessing.errors import record
+
 
 def parse_args():
     parese = argparse.ArgumentParser(description="Train a detector")
@@ -24,7 +26,7 @@ def parse_args():
     args = parese.parse_args()
     return args
 
-
+@record
 def main():
     args = parse_args()
     cfg = Config.fromfile(args.config)
@@ -43,7 +45,7 @@ def main():
     meta = dict()
     env_info_dict = collect_env()
     env_info = "\n".join([f"{k}: {v}" for k, v in env_info_dict.items()])
-    dash_line = "-" * 60 + "\n"
+    # dash_line = "-" * 60 + "\n"
     # logger.info('Environment info:\n' + dash_line + env_info + '\n' + dash_line)
     meta['env_info'] = env_info
     meta['config'] = cfg.pretty_text

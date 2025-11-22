@@ -9,6 +9,9 @@ class VectorMapNet(nn.Module):
         super().__init__()
 
         self.dummy_layer = nn.Linear(10, 10)
+    
+    def forward(self):
+        print('forward')
 
     def train_step(self, data_dict, optimizer):
         loss = torch.tensor(0.0, requires_grad=True)
